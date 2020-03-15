@@ -7,7 +7,9 @@ class GradlePlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
         project.configure(project, {
-            Docker
+            DockerSetup.include(project)
+            TestExecutioner.include(project)
+            TestReporter.include(project)
         })
     }
 
